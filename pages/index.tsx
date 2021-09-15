@@ -1,11 +1,11 @@
 import { Avatar } from '@chakra-ui/avatar'
 import { Button } from '@chakra-ui/button'
-import { Box, Container, Divider, Heading, SimpleGrid } from '@chakra-ui/layout'
+import { Box, Container, Divider, Heading, List, ListIcon, ListItem, SimpleGrid, Text, Wrap, WrapItem } from '@chakra-ui/layout'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-
-
+import { PhoneIcon, EmailIcon, CalendarIcon } from '@chakra-ui/icons'
+import {AiFillLinkedin} from "react-icons/ai"
+import {FaLinkedin} from "react-icons/fa"
 const Home: NextPage = () => {
   return (
     <div >
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <header>
         <Box bgColor="#ffd100" p={5}>
           <Container maxW={1280} >
-            <Avatar name="Felix Koch" src="/web.jpg"  />
+            <Avatar name="Felix Koch" src="/web.jpg" />
           </Container>
         </Box>
       </header>
@@ -29,26 +29,29 @@ const Home: NextPage = () => {
               Felix Koch
             </Heading>
             <Box borderTop={10} borderColor="gray.800" borderStyle="solid" width="xs" mt={10} mb={10}></Box>
-            <Heading as="h1" size="2xl" mb={20}>
+            <Heading as="h1" size="2xl" mb={16}>
               Founder<br />Freelance Full Stack Developer<br />Freelance Data Analyst<br />Father & Beekeeper
             </Heading>
-            <SimpleGrid columns={4} mb={10}>
-              <Box>
-                <Button variant="outline" size="lg" borderColor="gray.800" borderWidth="3px">
+
+            <Text fontSize='2xl' mb={5}>Please get in touch</Text>
+
+            <Wrap spacing="30px" mb={10}>
+              <WrapItem>
+                <Button leftIcon={<EmailIcon />} variant="outline" size="lg" borderColor="gray.800" borderWidth="3px">
                   felix@tagungshotels.info
                 </Button>
-              </Box>
-              <Box>
-                <Button variant="outline" size="lg" borderColor="gray.800" borderWidth="3px">
+              </WrapItem>
+              <WrapItem>
+                <Button leftIcon={<PhoneIcon />} variant="outline" size="lg" borderColor="gray.800" borderWidth="3px">
                   +49 4266 999 999 9
                 </Button>
-              </Box>
-              <Box>
-                <Button variant="outline" size="lg" borderColor="gray.800" borderWidth="3px">
+              </WrapItem>
+              <WrapItem>
+                <Button leftIcon={<CalendarIcon />} variant="outline" size="lg" borderColor="gray.800" borderWidth="3px">
                   Make an appointment
                 </Button>
-              </Box>
-            </SimpleGrid>
+              </WrapItem>
+            </Wrap>
           </Container>
         </Box>
 
@@ -62,7 +65,37 @@ const Home: NextPage = () => {
       <footer>
         <Box bgColor="#d6d6d6" p={10}>
           <Container maxW={1280} >
-            footer
+            <SimpleGrid columns={2}>
+              <Box>
+                <List spacing={3}>
+                  <ListItem fontSize="xl">
+
+                    <a href='#'>
+                      Imprint
+                    </a>
+                  </ListItem>
+                  <ListItem fontSize="xl">
+                    Privacy
+                  </ListItem>
+                </List>
+              </Box>
+              <Box>
+                <List spacing={3}>
+                  <ListItem fontSize="xl">
+
+                    <ListIcon as={AiFillLinkedin} />
+                    <a href='#'>
+                      LinkedIn
+                    </a>
+                  </ListItem>
+                  <ListItem fontSize="xl">
+                    <ListIcon as={FaLinkedin} fontSize="2xl"/>
+                    Github
+                  </ListItem>
+                </List>
+
+              </Box>
+            </SimpleGrid>
           </Container>
         </Box>
       </footer>

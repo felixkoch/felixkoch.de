@@ -13,7 +13,7 @@ import Page from "../src/Page"
 
 const Home: NextPage = () => {
   return (
-    <Page>
+    <Page startPage={true}>
       <Box bgColor="#ffd100" pt={5} pb={5}>
         <Container maxW={1280}>
           <Heading as="h1" size="4xl">

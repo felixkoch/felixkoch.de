@@ -7,7 +7,7 @@ export default function Imprint() {
   return <Page>
 
     <Container maxW={1280} pb={10}>
-      <Heading as="h1" size="2xl" mt={10} mb={10}>
+      <Heading as="h1" size="2xl" mt={20} mb={20}>
         Impressum
       </Heading>
       <Box className="content" fontSize="xl" maxWidth="4xl">

@@ -9,6 +9,8 @@ import { Tag } from '@chakra-ui/tag'
 import { Icon } from "@chakra-ui/react"
 import Page from "../src/Page"
 
+
+
 const Home: NextPage = () => {
   return (
     <Page>

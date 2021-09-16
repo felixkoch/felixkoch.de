@@ -4,8 +4,7 @@ import Page from "../src/Page";
 //import "../styles/content.module.css"
 
 export default function Imprint() {
-  return <Page>
-
+  return <Page title="Privacy Policy">
     <Container maxW={1280} pb={10}>
       <Heading as="h1" size="2xl" mt={20} mb={20}>
         Datenschutzerklärung

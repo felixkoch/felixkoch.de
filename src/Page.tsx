@@ -13,15 +13,19 @@ import { Collapse } from "@chakra-ui/transition"
 
 export default function Page(props: any) {
 
-  const { startPage } = props
+  const { startPage, title, description } = props
   const { isOpen, onToggle } = useDisclosure()
 
   return (
     <div >
       <Head>
-        <title>Felix Koch – Freelancer & Founder</title>
-        <meta name="description" content="Freelance Full Stack Developer & Freelance Data Analyst" />
+        <title>{title}</title>
+        {description &&
+          <meta name="description" content={description} />
+        }
         <link rel="icon" href="/web.jpg" />
+        {startPage ?
+          <meta name="robots" content="index, follow" /> : <meta name="robots" content="noindex, follow" />}
       </Head>
       <header>
         <Box bgColor="#ffd100" pt={startPage ? 5 : 4} pb={startPage ? 5 : 4}>

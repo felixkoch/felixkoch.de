@@ -7,7 +7,7 @@ import Head from 'next/head'
 import { PhoneIcon, EmailIcon, CalendarIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 import { Tag } from '@chakra-ui/tag'
-import { Icon, IconButton,useDisclosure } from "@chakra-ui/react"
+import { Icon, IconButton, useDisclosure } from "@chakra-ui/react"
 import Link from "next/link"
 import { Collapse } from "@chakra-ui/transition"
 
@@ -26,11 +26,37 @@ export default function Page(props: any) {
       <header>
         <Box bgColor="#ffd100" pt={startPage ? 5 : 4} pb={startPage ? 5 : 4}>
           <Container maxW={1280} >
-            <Flex justifyContent="space-between" alignItems="center">
-              <Link href="/">
-                <Avatar name="Felix Koch" src="/web.jpg" size={startPage ? "lg" : "md"} />
+            <Flex justifyContent="space-between" >
+              <Flex>
+                <Link href="/">
+                  <Avatar name="Felix Koch" src="/web.jpg" size={startPage ? "lg" : "sm"} cursor="pointer" />
+                </Link>
 
-              </Link>
+                <Collapse in={isOpen} animateOpacity >
+                  <VStack spacing={4} alignItems="start" ml={10}>
+
+                    <a href="mailto:felix@tagungshotels.info" style={{ textDecoration: 'none' }}>
+                      <Button leftIcon={<EmailIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
+                        felix@tagungshotels.info
+                      </Button>
+                    </a>
+
+                    <a href="tel:004942669999999" style={{ textDecoration: 'none' }}>
+                      <Button leftIcon={<PhoneIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
+                        +49 4266 999 999 9
+                      </Button>
+                    </a>
+
+                    <a href="https://meetings.hubspot.com/felix137" style={{ textDecoration: 'none' }}>
+                      <Button leftIcon={<CalendarIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
+                        Make an appointment
+                      </Button>
+                    </a>
+
+                  </VStack>
+                </Collapse>
+
+              </Flex>
 
               <Wrap spacing={4}>
                 <WrapItem display={['none', 'none', 'none', 'block']}>
@@ -59,29 +85,6 @@ export default function Page(props: any) {
                 </WrapItem>
               </Wrap>
             </Flex>
-            <Collapse in={isOpen} animateOpacity>
-              <VStack spacing={4} alignItems="start" mt={4}>
-
-                <a href="mailto:felix@tagungshotels.info" style={{ textDecoration: 'none' }}>
-                  <Button leftIcon={<EmailIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
-                    felix@tagungshotels.info
-                  </Button>
-                </a>
-
-                <a href="tel:004942669999999" style={{ textDecoration: 'none' }}>
-                  <Button leftIcon={<PhoneIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
-                    +49 4266 999 999 9
-                  </Button>
-                </a>
-
-                <a href="https://meetings.hubspot.com/felix137" style={{ textDecoration: 'none' }}>
-                  <Button leftIcon={<CalendarIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
-                    Make an appointment
-                  </Button>
-                </a>
-
-              </VStack>
-            </Collapse>
 
           </Container>
         </Box>
@@ -94,8 +97,8 @@ export default function Page(props: any) {
       <footer>
         <Box bgColor="#d6d6d6" pt={10} pb={10}>
           <Container maxW={1280} >
-            <SimpleGrid columns={2}>
-              <Box>
+            <SimpleGrid columns={[1, 2]}>
+              <Box mb={[3, 0]}>
                 <List spacing={3}>
                   <ListItem fontSize="xl">
 
@@ -115,13 +118,15 @@ export default function Page(props: any) {
                   <ListItem fontSize="xl">
 
                     <ListIcon as={FaLinkedin} fontSize="2xl" />
-                    <a href='#'>
+                    <a href='https://www.linkedin.com/in/felix-koch-tagungshotels/'>
                       LinkedIn
                     </a>
                   </ListItem>
                   <ListItem fontSize="xl">
                     <ListIcon as={FaGithub} fontSize="2xl" />
-                    Github
+                    <a href='https://github.com/felixkoch'>
+                      Github
+                    </a>
                   </ListItem>
                 </List>
 

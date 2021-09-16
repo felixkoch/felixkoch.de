@@ -10,7 +10,7 @@ export default function Imprint() {
       <Heading as="h1" size="2xl" mt={20} mb={20}>
         Datenschutzerklärung
       </Heading>
-      <Box className="content" fontSize="xl" maxWidth="4xl">
+      <Box className="content" fontSize={["lg", "lg", "xl"]} maxWidth="4xl">
         <p>
           Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen.
           Datenschutz hat einen besonders hohen Stellenwert für die

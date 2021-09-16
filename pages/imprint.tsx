@@ -10,7 +10,7 @@ export default function Imprint() {
       <Heading as="h1" size="2xl" mt={20} mb={20}>
         Impressum
       </Heading>
-      <Box className="content" fontSize="xl" maxWidth="4xl">
+      <Box className="content" fontSize={["lg", "lg", "xl"]} maxWidth="4xl">
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
           tagungshotels.info UG (haftungsbeschränkt)

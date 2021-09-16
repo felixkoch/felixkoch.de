@@ -4,7 +4,7 @@ import { Button } from '@chakra-ui/button'
 import { Box, Container, Divider, Flex, Heading, HStack, Link as ChakraLink, List, ListIcon, ListItem, SimpleGrid, Text, VStack, Wrap, WrapItem } from '@chakra-ui/layout'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { PhoneIcon, EmailIcon, CalendarIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { PhoneIcon, EmailIcon, CalendarIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 import { Tag } from '@chakra-ui/tag'
 import { Icon, IconButton, useDisclosure } from "@chakra-ui/react"
@@ -26,6 +26,8 @@ export default function Page(props: any) {
         <link rel="icon" href="/web.jpg" />
         {startPage ?
           <meta name="robots" content="index, follow" /> : <meta name="robots" content="noindex, follow" />}
+        <meta name="theme-color" content="#ffd100" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
         <Box bgColor="#ffd100" pt={startPage ? 5 : 4} pb={startPage ? 5 : 4}>
@@ -37,7 +39,7 @@ export default function Page(props: any) {
                 </Link>
 
                 <Collapse in={isOpen} animateOpacity >
-                  <VStack spacing={4} alignItems="start" ml={10}>
+                  <VStack spacing={4} alignItems="start" ml={[4, 10]}>
 
                     <a href="mailto:felix@tagungshotels.info" style={{ textDecoration: 'none' }}>
                       <Button leftIcon={<EmailIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px">
@@ -85,7 +87,7 @@ export default function Page(props: any) {
                   </a>
                 </WrapItem>
                 <WrapItem display={['block', 'block', 'block', 'none']}>
-                  <IconButton onClick={onToggle} aria-label="Menue" icon={<HamburgerIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px" />
+                  <IconButton onClick={onToggle} aria-label="Menue" icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} variant="outline" size="sm" borderColor="gray.800" borderWidth="3px" />
                 </WrapItem>
               </Wrap>
             </Flex>

@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "deploy": "gh-pages -d out"
+    "deploy": "rimraf node_modules/.cache && next build && next export && gh-pages -d out -t true"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",

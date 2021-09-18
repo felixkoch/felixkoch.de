@@ -65,7 +65,7 @@ const Home: NextPage = () => {
           </Wrap>
           <Wrap spacing={4} mb={10} maxWidth="3xl">
             {
-              ['AzureSQL', 'Azure ACI', 'Azure AppService', 'apaleo', 'apaleo-api', 'CSS', 'Docker', 'GraphQL', 'Linux', 'Meltano', 'MySql', 'Next.js', 'Node', 'Node.js', 'Postgres', 'PowerAutomate', 'Python', 'React', 'React.js', 'Singer', 'Singer.io', 'SQL'].map(t => <Tag key={t} size="md" variant="solid" colorScheme="brand" color="gray.800">{t}</Tag>)
+              ['apaleo', 'apaleo-api', 'AzureSQL', 'Azure ACI', 'Azure AppService', 'Chakra UI', 'CSS', 'Docker', 'GraphQL', 'Hasura', 'Linux', 'Material UI', 'Meltano', 'MySql', 'Next.js', 'Node', 'Node.js', 'Postgres', 'PowerAutomate', 'Prisma', 'Python', 'React', 'React.js', 'SEA', 'SEO', 'Singer', 'Singer.io', 'SQL'].map(t => <Tag key={t} size="md" variant="solid" colorScheme="brand" color="gray.800">{t}</Tag>)
             }
           </Wrap>
         </Box>
